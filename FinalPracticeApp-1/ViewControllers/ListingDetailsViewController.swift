@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import MapKit
 
 class ListingDetailsViewController: UIViewController {
     
     var listing: Listing?
+    var property: Property?
 
     @IBOutlet weak var listingName: UILabel!
     @IBOutlet weak var listingPRICE: UILabel!
     @IBOutlet weak var listingFurniture: UILabel!
     @IBOutlet weak var listingImage: UIImageView!
     @IBOutlet weak var listingDescription: UILabel!
+    @IBOutlet weak var listingMapView: MKMapView!
     
     
     override func viewDidLoad() {
@@ -35,6 +38,11 @@ class ListingDetailsViewController: UIViewController {
             }
         }
         
+        // Add map marker
+        if let lat = property?.latitude, let lng = property?.longitude {
+            addMarker(at: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+        }
+        
         
         func buildImageURL(from partialURL: String) -> URL? {
             
@@ -50,15 +58,20 @@ class ListingDetailsViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // Function to add a marker (annotation) to the map
+    func addMarker(at coordinate: CLLocationCoordinate2D) {
+        // Create a marker (annotation)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = listing?.listingName
+        annotation.subtitle = listing?.description
+        
+        // Add the marker to the map
+        listingMapView.addAnnotation(annotation)
+        
+        // Center the map on the marker's location and set zoom level
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        listingMapView.setRegion(region, animated: true)
     }
-    */
 
 }

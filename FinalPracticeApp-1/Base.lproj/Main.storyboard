@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -319,7 +320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwu-SA-5RR">
-                                <rect key="frame" x="0.0" y="59" width="393" height="1358"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="1324"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vtp-q6-BjA">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
@@ -351,7 +352,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="j6D-vS-dFZ"/>
                             </scrollView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BV8-WJ-VHf">
-                                <rect key="frame" x="0.0" y="1417" width="393" height="49"/>
+                                <rect key="frame" x="0.0" y="1383" width="393" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="StJ-rB-z4O"/>
@@ -432,12 +433,22 @@
                                                     <constraint firstItem="DhV-1u-8Cj" firstAttribute="leading" secondItem="xxS-6g-yki" secondAttribute="leading" id="bdy-ou-JCj"/>
                                                 </constraints>
                                             </stackView>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnY-M2-Esh">
+                                                <rect key="frame" x="16" y="339" width="361" height="400"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="lJV-D4-ijo"/>
+                                                </constraints>
+                                                <standardMapConfiguration key="preferredConfiguration"/>
+                                            </mapView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="xxS-6g-yki" secondAttribute="trailing" constant="16" id="0U4-le-Zns"/>
                                             <constraint firstItem="xxS-6g-yki" firstAttribute="leading" secondItem="YKB-d2-tSd" secondAttribute="leading" constant="16" id="2fr-O2-9ot"/>
+                                            <constraint firstItem="rnY-M2-Esh" firstAttribute="top" secondItem="xxS-6g-yki" secondAttribute="bottom" constant="24" id="4vn-Qi-qLp"/>
+                                            <constraint firstItem="rnY-M2-Esh" firstAttribute="leading" secondItem="YKB-d2-tSd" secondAttribute="leading" constant="16" id="DlP-2X-ZZ5"/>
                                             <constraint firstItem="byT-ic-KTA" firstAttribute="leading" secondItem="YKB-d2-tSd" secondAttribute="leading" constant="16" id="EIY-uB-0xa"/>
+                                            <constraint firstAttribute="trailing" secondItem="rnY-M2-Esh" secondAttribute="trailing" constant="16" id="LEz-7M-Xaq"/>
                                             <constraint firstItem="NQ4-Rh-IH0" firstAttribute="leading" secondItem="YKB-d2-tSd" secondAttribute="leading" constant="16" id="Lk9-W0-ARf"/>
                                             <constraint firstAttribute="trailing" secondItem="PT6-97-jEf" secondAttribute="trailing" constant="8" id="Naf-ND-47O"/>
                                             <constraint firstAttribute="trailing" secondItem="byT-ic-KTA" secondAttribute="trailing" constant="16" id="X4F-mV-zOW"/>
@@ -475,13 +486,14 @@
                         <outlet property="listingDescription" destination="byT-ic-KTA" id="7a5-XI-70t"/>
                         <outlet property="listingFurniture" destination="IfP-jD-7Gj" id="Ek6-uk-WgR"/>
                         <outlet property="listingImage" destination="PT6-97-jEf" id="NO8-Lt-iIQ"/>
+                        <outlet property="listingMapView" destination="rnY-M2-Esh" id="oVs-UP-xeG"/>
                         <outlet property="listingName" destination="NQ4-Rh-IH0" id="XYV-VA-EM8"/>
                         <outlet property="listingPRICE" destination="DhV-1u-8Cj" id="j7u-dm-Yh7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRs-Qp-797" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727" y="627"/>
+            <point key="canvasLocation" x="-727.48091603053433" y="626.76056338028172"/>
         </scene>
     </scenes>
     <resources>

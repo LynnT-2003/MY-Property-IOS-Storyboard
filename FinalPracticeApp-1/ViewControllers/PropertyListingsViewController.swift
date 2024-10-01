@@ -92,6 +92,7 @@ extension PropertyListingsViewController: UITableViewDelegate, UITableViewDataSo
         let listingDetailsPage = UIStoryboard(name: "Main", bundle: .main)
             .instantiateViewController(withIdentifier: "listingDetailsPage") as! ListingDetailsViewController
         listingDetailsPage.listing = listings[indexPath.row]
+        listingDetailsPage.property = property
         navigationController?.pushViewController(listingDetailsPage, animated: true)
     }
     
