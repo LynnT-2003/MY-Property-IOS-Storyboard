@@ -63,9 +63,15 @@ extension FirstTabViewController: UICollectionViewDelegate, UICollectionViewData
             if let imageURL = buildImageURL(from: photoRef) {
                 cell.propertyImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholder")) // Set the image URL
                 print("Image URL: \(imageURL)")
+
+                // Apply border radius (rounded corners)
+                cell.propertyImageView.layer.cornerRadius = 10.0 // Set the desired corner radius value
+                cell.propertyImageView.layer.masksToBounds = true // Ensure the corners are clipped
             }
         }
+
         cell.propertyNameLabel.text = property.title
+        cell.priceRangeLabel.text = "\(Int(property.minPrice.rounded())) - \(Int(property.maxPrice.rounded()))THB / mo"
         
 //        cell.heartImage.image = UIImage(systemName: "heart")
         

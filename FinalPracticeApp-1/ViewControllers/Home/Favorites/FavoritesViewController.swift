@@ -87,8 +87,8 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
         }
         
         cell.listingName.text = listing.listingName
-        cell.favoriteIcon.image = isListingFavorited(listing) ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
-        cell.favoriteIcon.tintColor = .red
+//        cell.favoriteIcon.image = isListingFavorited(listing) ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+//        cell.favoriteIcon.tintColor = .red
         
         // Set the toggle favorite action
         cell.toggleFavoriteAction = { [weak self] in
@@ -96,6 +96,14 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
         }
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let listingDetailsPage = UIStoryboard(name: "Main", bundle: .main)
+            .instantiateViewController(withIdentifier: "listingDetailsPage") as! ListingDetailsViewController
+        listingDetailsPage.listing = favoriteListings[indexPath.row].listing
+        listingDetailsPage.property = favoriteListings[indexPath.row].property
+        navigationController?.pushViewController(listingDetailsPage, animated: true)
     }
     
     func buildImageURL(from partialURL: String) -> URL? {

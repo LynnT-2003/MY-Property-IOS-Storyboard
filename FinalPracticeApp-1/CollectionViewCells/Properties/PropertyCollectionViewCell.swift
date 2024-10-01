@@ -10,7 +10,7 @@ import UIKit
 class PropertyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var propertyImageView: UIImageView!
-    @IBOutlet var heartImage: UIImageView!
     @IBOutlet var propertyNameLabel: UILabel!
+    @IBOutlet weak var priceRangeLabel: UILabel!
     
 }

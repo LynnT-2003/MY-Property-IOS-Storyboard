@@ -16,6 +16,11 @@ class PropertyListingsViewController: UIViewController {
     var listings:[Listing] = []
     
     override func viewDidLoad() {
+        let appearance = UINavigationBarAppearance()
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = property?.title
         super.viewDidLoad()
         
         if let propertyId = property?._id {

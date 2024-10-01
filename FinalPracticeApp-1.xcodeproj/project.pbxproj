@@ -123,8 +123,8 @@
 		BA9426762CABF252009C616B /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				BA9426952CACB749009C616B /* Properties */,
 				BA9426922CAC92EC009C616B /* Favorites */,
-				BA9426772CABF26E009C616B /* PropertyCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -196,6 +196,14 @@
 				BA9426932CAC9312009C616B /* FavoriteCollectionViewCell.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		BA9426952CACB749009C616B /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				BA9426772CABF26E009C616B /* PropertyCollectionViewCell.swift */,
+			);
+			path = Properties;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
