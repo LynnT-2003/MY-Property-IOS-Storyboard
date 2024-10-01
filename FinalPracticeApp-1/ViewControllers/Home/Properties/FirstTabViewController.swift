@@ -67,6 +67,8 @@ extension FirstTabViewController: UICollectionViewDelegate, UICollectionViewData
         }
         cell.propertyNameLabel.text = property.title
         
+//        cell.heartImage.image = UIImage(systemName: "heart")
+        
         return cell
     }
     

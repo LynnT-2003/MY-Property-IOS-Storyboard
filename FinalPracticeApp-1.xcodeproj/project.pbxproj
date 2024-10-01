@@ -22,6 +22,10 @@
 		BA94267C2CAC00D6009C616B /* ListingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94267B2CAC00D6009C616B /* ListingResponse.swift */; };
 		BA94267F2CAC0815009C616B /* ListingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94267E2CAC0815009C616B /* ListingsTableViewCell.swift */; };
 		BA9426812CAC223F009C616B /* ListingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9426802CAC223F009C616B /* ListingDetailsViewController.swift */; };
+		BA9426872CAC60C3009C616B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9426862CAC60C3009C616B /* ProfileViewController.swift */; };
+		BA9426892CAC6FDF009C616B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9426882CAC6FDF009C616B /* ProfileTableViewCell.swift */; };
+		BA94268C2CAC7D8D009C616B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94268B2CAC7D8D009C616B /* FavoritesViewController.swift */; };
+		BA94268F2CAC8598009C616B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94268E2CAC8598009C616B /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		BA94267B2CAC00D6009C616B /* ListingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingResponse.swift; sourceTree = "<group>"; };
 		BA94267E2CAC0815009C616B /* ListingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewCell.swift; sourceTree = "<group>"; };
 		BA9426802CAC223F009C616B /* ListingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailsViewController.swift; sourceTree = "<group>"; };
+		BA9426862CAC60C3009C616B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BA9426882CAC6FDF009C616B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		BA94268B2CAC7D8D009C616B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		BA94268E2CAC8598009C616B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		BA59E8682CAAEFE70030D146 /* FinalPracticeApp-1 */ = {
 			isa = PBXGroup;
 			children = (
+				BA94268D2CAC8587009C616B /* Helper */,
 				BA94267D2CAC0803009C616B /* TableViewCells */,
 				BA9426762CABF252009C616B /* CollectionViewCells */,
 				BA94266F2CABE4A6009C616B /* Models */,
@@ -91,10 +100,9 @@
 		BA9426692CABE2E3009C616B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA9426852CAC6051009C616B /* Home */,
+				BA9426842CAC6045009C616B /* Profile */,
 				BA59E86D2CAAEFE70030D146 /* ViewController.swift */,
-				BA94266A2CABE31A009C616B /* FirstTabViewController.swift */,
-				BA9426792CABFEFD009C616B /* PropertyListingsViewController.swift */,
-				BA9426802CAC223F009C616B /* ListingDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -120,8 +128,60 @@
 			isa = PBXGroup;
 			children = (
 				BA94267E2CAC0815009C616B /* ListingsTableViewCell.swift */,
+				BA9426882CAC6FDF009C616B /* ProfileTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		BA9426822CAC5F8C009C616B /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				BA94266A2CABE31A009C616B /* FirstTabViewController.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		BA9426832CAC5F98009C616B /* Listings */ = {
+			isa = PBXGroup;
+			children = (
+				BA9426792CABFEFD009C616B /* PropertyListingsViewController.swift */,
+				BA9426802CAC223F009C616B /* ListingDetailsViewController.swift */,
+			);
+			path = Listings;
+			sourceTree = "<group>";
+		};
+		BA9426842CAC6045009C616B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BA9426862CAC60C3009C616B /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BA9426852CAC6051009C616B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BA94268A2CAC7D6F009C616B /* Favorites */,
+				BA9426822CAC5F8C009C616B /* Properties */,
+				BA9426832CAC5F98009C616B /* Listings */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BA94268A2CAC7D6F009C616B /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				BA94268B2CAC7D8D009C616B /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		BA94268D2CAC8587009C616B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BA94268E2CAC8598009C616B /* UserDefault.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,14 +263,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA94268C2CAC7D8D009C616B /* FavoritesViewController.swift in Sources */,
 				BA9426812CAC223F009C616B /* ListingDetailsViewController.swift in Sources */,
 				BA59E86E2CAAEFE70030D146 /* ViewController.swift in Sources */,
 				BA94267C2CAC00D6009C616B /* ListingResponse.swift in Sources */,
 				BA94266B2CABE31A009C616B /* FirstTabViewController.swift in Sources */,
 				BA9426712CABE4B6009C616B /* PropertyResponse.swift in Sources */,
 				BA94267A2CABFEFD009C616B /* PropertyListingsViewController.swift in Sources */,
+				BA9426872CAC60C3009C616B /* ProfileViewController.swift in Sources */,
+				BA94268F2CAC8598009C616B /* UserDefault.swift in Sources */,
 				BA59E86A2CAAEFE70030D146 /* AppDelegate.swift in Sources */,
 				BA9426782CABF26E009C616B /* PropertyCollectionViewCell.swift in Sources */,
+				BA9426892CAC6FDF009C616B /* ProfileTableViewCell.swift in Sources */,
 				BA59E86C2CAAEFE70030D146 /* SceneDelegate.swift in Sources */,
 				BA94267F2CAC0815009C616B /* ListingsTableViewCell.swift in Sources */,
 			);

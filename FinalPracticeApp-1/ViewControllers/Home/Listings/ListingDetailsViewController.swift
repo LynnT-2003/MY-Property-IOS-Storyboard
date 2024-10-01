@@ -17,6 +17,7 @@ class ListingDetailsViewController: UIViewController {
     @IBOutlet weak var listingPRICE: UILabel!
     @IBOutlet weak var listingFurniture: UILabel!
     @IBOutlet weak var listingImage: UIImageView!
+    @IBOutlet weak var favoriteImage: UIImageView!
     @IBOutlet weak var listingDescription: UILabel!
     @IBOutlet weak var listingMapView: MKMapView!
     
@@ -26,6 +27,17 @@ class ListingDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        favoriteImage.image = UIImage(systemName: "heart")
+        
+        let heartIcon = isListingFavorited(listing!) ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        favoriteImage.image = heartIcon
+        favoriteImage.tintColor = .red
+        // Add tap gesture recognizer to the favorite image
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleFavorite))
+        favoriteImage.addGestureRecognizer(tapGesture)
+        favoriteImage.isUserInteractionEnabled = true
+        
+        
         // Do any additional setup after loading the view.
         listingName.text = listing?.listingName
         listingDescription.text = listing?.description
@@ -58,6 +70,18 @@ class ListingDetailsViewController: UIViewController {
             let fullURLString = "https://cdn.sanity.io/images/gejbm6fo/production/\(cleanedURLString)"
             print(fullURLString)
             return URL(string: fullURLString)
+        }
+    }
+    
+    @objc func toggleFavorite() {
+        guard let listing = listing else { return }
+
+        if isListingFavorited(listing) {
+            removeFavoriteListing(listing)
+            favoriteImage.image = UIImage(systemName: "heart")
+        } else {
+            saveFavoriteListing(listing)
+            favoriteImage.image = UIImage(systemName: "heart.fill")
         }
     }
     
