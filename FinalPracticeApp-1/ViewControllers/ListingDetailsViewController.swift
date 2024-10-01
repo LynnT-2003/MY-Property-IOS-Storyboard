@@ -20,6 +20,8 @@ class ListingDetailsViewController: UIViewController {
     @IBOutlet weak var listingDescription: UILabel!
     @IBOutlet weak var listingMapView: MKMapView!
     
+    let destinationLat = 13.611696106739041
+    let destinationLng = 100.83792186056604
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class ListingDetailsViewController: UIViewController {
         listingPRICE.text = "Rent: \(Int(listing?.price.rounded() ?? 0)) THB / mo"
         listingFurniture.text = "Room: \(listing?.furniture ?? "")"
         
+        listingMapView.delegate = self
         
         if let photoRef = listing?.listingHero?.asset._ref {
             if let imageURL = buildImageURL(from: photoRef) {
@@ -63,8 +66,8 @@ class ListingDetailsViewController: UIViewController {
         // Create a marker (annotation)
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        annotation.title = listing?.listingName
-        annotation.subtitle = listing?.description
+        annotation.title = property?.title
+        annotation.subtitle = listing?.listingName
         
         // Add the marker to the map
         listingMapView.addAnnotation(annotation)
@@ -74,4 +77,79 @@ class ListingDetailsViewController: UIViewController {
         listingMapView.setRegion(region, animated: true)
     }
 
+}
+
+extension ListingDetailsViewController: MKMapViewDelegate {
+    
+    
+    // Delegate method to customize the annotation view
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let identifier = "listingAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            
+            // Create the info button and add it to the callout
+            let infoButton = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = infoButton
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    // Handle the tap on the info button
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            
+            // Calculate walking distance
+            if let propertyLat = property?.latitude, let propertyLng = property?.longitude {
+                let propertyCoordinate = CLLocationCoordinate2D(latitude: propertyLat, longitude: propertyLng)
+                let destinationCoordinate = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLng)
+                
+                calculateWalkingDistance(from: propertyCoordinate, to: destinationCoordinate) { distanceInKilometers in
+                    // Show an alert with the property description and walking distance
+                    let alertMessage = "Walking distance from Assumption University: \(String(format: "%.2f", distanceInKilometers)) km"
+                    let alert = UIAlertController(title: "Property Information", message: alertMessage, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    // Function to calculate walking distance and execute a completion handler with the result
+    func calculateWalkingDistance(from originCoordinate: CLLocationCoordinate2D, to destinationCoordinate: CLLocationCoordinate2D, completion: @escaping (Double) -> Void) {
+        let sourcePlacemark = MKPlacemark(coordinate: originCoordinate)
+        let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: sourcePlacemark)
+        request.destination = MKMapItem(placemark: destinationPlacemark)
+        request.transportType = .walking  // Specify walking directions
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { response, error in
+            if let error = error {
+                print("Error calculating directions: \(error.localizedDescription)")
+                completion(0) // Return 0 in case of an error
+                return
+            }
+            
+            if let route = response?.routes.first {
+                let distanceInMeters = route.distance
+                let distanceInKilometers = distanceInMeters / 1000.0
+                completion(distanceInKilometers)
+            } else {
+                completion(0) // Return 0 if no route is found
+            }
+        }
+    }
 }
