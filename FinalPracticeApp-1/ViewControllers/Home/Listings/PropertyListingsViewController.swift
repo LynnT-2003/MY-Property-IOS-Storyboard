@@ -32,34 +32,13 @@ class PropertyListingsViewController: UIViewController {
         AF.request(urlString).validate().responseDecodable(of: ListingResponse.self) { response in
             switch response.result {
             case .success(let listingResponse):
+                print(urlString)
                 self.listings = listingResponse.result
-                
-                // Log specific details from the fetched listings
-                for listing in self.listings {
-                    print("Listing ID: \(listing._id)")
-                    print("Listing Name: \(listing.listingName)")
-                    print("Description: \(listing.description)")
-                    print("Price: \(listing.price) THB")
-                    print("Bedrooms: \(listing.bedroom ?? 0), Bathrooms: \(listing.bathroom ?? 0)")
-                    print("Furniture: \(listing.furniture ?? "N/A")")
-                    print("Minimum Contract: \(listing.minimumContractInMonth ?? 0) months")
-                    print("Status: \(listing.statusActive ?? "N/A")")
-                    print("---") // Separator for better readability
-                }
                 
                 // Reload the table view on the main thread
                 DispatchQueue.main.async {
                     self.listingsTableView.reloadData()
                 }
-                
-//                // Check if listings is not empty before accessing the first element
-//                if let firstListing = self.listings.first {
-//                    DispatchQueue.main.async {
-//                        self.propertyLabelDeletable.text = firstListing.listingName
-//                    }
-//                } else {
-//                    print("No listings found for this property.")
-//                }
                 
             case .failure(let error):
                 print("Error fetching listings: \(error.localizedDescription)")

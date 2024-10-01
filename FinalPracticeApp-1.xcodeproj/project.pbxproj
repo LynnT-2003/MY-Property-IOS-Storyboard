@@ -26,6 +26,7 @@
 		BA9426892CAC6FDF009C616B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9426882CAC6FDF009C616B /* ProfileTableViewCell.swift */; };
 		BA94268C2CAC7D8D009C616B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94268B2CAC7D8D009C616B /* FavoritesViewController.swift */; };
 		BA94268F2CAC8598009C616B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94268E2CAC8598009C616B /* UserDefault.swift */; };
+		BA9426912CAC8D32009C616B /* UserDefault2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9426902CAC8D32009C616B /* UserDefault2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		BA9426882CAC6FDF009C616B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BA94268B2CAC7D8D009C616B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BA94268E2CAC8598009C616B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		BA9426902CAC8D32009C616B /* UserDefault2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				BA94268E2CAC8598009C616B /* UserDefault.swift */,
+				BA9426902CAC8D32009C616B /* UserDefault2.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9426912CAC8D32009C616B /* UserDefault2.swift in Sources */,
 				BA94268C2CAC7D8D009C616B /* FavoritesViewController.swift in Sources */,
 				BA9426812CAC223F009C616B /* ListingDetailsViewController.swift in Sources */,
 				BA59E86E2CAAEFE70030D146 /* ViewController.swift in Sources */,

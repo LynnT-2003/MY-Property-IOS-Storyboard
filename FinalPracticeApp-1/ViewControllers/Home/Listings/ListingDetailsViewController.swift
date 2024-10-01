@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Alamofire
 
 class ListingDetailsViewController: UIViewController {
     
@@ -74,16 +75,17 @@ class ListingDetailsViewController: UIViewController {
     }
     
     @objc func toggleFavorite() {
-        guard let listing = listing else { return }
+        guard let listing = listing, let property = property else { return }
 
         if isListingFavorited(listing) {
-            removeFavoriteListing(listing)
+            removeFavoriteListing(listing: listing)
             favoriteImage.image = UIImage(systemName: "heart")
         } else {
-            saveFavoriteListing(listing)
+            saveFavoriteListing(listing: listing, property: property)
             favoriteImage.image = UIImage(systemName: "heart.fill")
         }
     }
+
     
     // Function to add a marker (annotation) to the map
     func addMarker(at coordinate: CLLocationCoordinate2D) {
