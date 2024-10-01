@@ -65,13 +65,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izv-Jc-tk6">
-                                <rect key="frame" x="0.0" y="59" width="393" height="907"/>
+                                <rect key="frame" x="0.0" y="74" width="393" height="892"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIL-TJ-beq">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XKA-ZU-G49">
-                                                <rect key="frame" x="8" y="0.0" width="377" height="1000"/>
+                                                <rect key="frame" x="10" y="0.0" width="373" height="1000"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gcH-b8-pnC">
                                                     <size key="itemSize" width="200" height="234"/>
@@ -81,7 +81,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favoriteCell" id="Z3B-Ri-CwE" customClass="FavoriteCollectionViewCell" customModule="FinalPracticeApp_1" customModuleProvider="target">
-                                                        <rect key="frame" x="88.666666666666671" y="0.0" width="200" height="234"/>
+                                                        <rect key="frame" x="86.666666666666671" y="0.0" width="200" height="234"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vSu-ba-UAK">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="234"/>
@@ -139,11 +139,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="XKA-ZU-G49" secondAttribute="trailing" constant="8" id="K7e-OK-5or"/>
+                                            <constraint firstAttribute="trailing" secondItem="XKA-ZU-G49" secondAttribute="trailing" constant="10" id="K7e-OK-5or"/>
                                             <constraint firstAttribute="height" constant="1000" id="N9E-J6-oTZ"/>
                                             <constraint firstItem="XKA-ZU-G49" firstAttribute="top" secondItem="cIL-TJ-beq" secondAttribute="top" id="V0U-Xe-n6M"/>
                                             <constraint firstAttribute="bottom" secondItem="XKA-ZU-G49" secondAttribute="bottom" id="fSe-hD-NBj"/>
-                                            <constraint firstItem="XKA-ZU-G49" firstAttribute="leading" secondItem="cIL-TJ-beq" secondAttribute="leading" constant="8" id="nNK-17-xYw"/>
+                                            <constraint firstItem="XKA-ZU-G49" firstAttribute="leading" secondItem="cIL-TJ-beq" secondAttribute="leading" constant="10" id="nNK-17-xYw"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -161,7 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="Zdr-tM-3De"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Izv-Jc-tk6" firstAttribute="top" secondItem="Zdr-tM-3De" secondAttribute="top" id="B9Y-1J-4GN"/>
+                            <constraint firstItem="Izv-Jc-tk6" firstAttribute="top" secondItem="Zdr-tM-3De" secondAttribute="top" constant="15" id="B9Y-1J-4GN"/>
                             <constraint firstItem="Izv-Jc-tk6" firstAttribute="leading" secondItem="Zdr-tM-3De" secondAttribute="leading" id="EIO-52-3oA"/>
                             <constraint firstItem="Izv-Jc-tk6" firstAttribute="trailing" secondItem="Zdr-tM-3De" secondAttribute="trailing" id="Pnw-Ji-9oB"/>
                             <constraint firstItem="Izv-Jc-tk6" firstAttribute="bottom" secondItem="Zdr-tM-3De" secondAttribute="bottom" id="Xxm-UK-CMH"/>
@@ -176,11 +176,11 @@
             </objects>
             <point key="canvasLocation" x="983.96946564885491" y="574.64788732394368"/>
         </scene>
-        <!--Favorites-->
+        <!--Profile-->
         <scene sceneID="czf-lT-Ffv">
             <objects>
                 <navigationController id="dLC-6Z-vws" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="Nuw-cc-pky"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Nuw-cc-pky"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O9h-a4-tQX">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -352,14 +352,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60H-E3-aFJ">
-                                                                    <rect key="frame" x="8" y="36" width="200" height="150"/>
+                                                                    <rect key="frame" x="8" y="12" width="200" height="150"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="200" id="HNJ-gk-NAf"/>
                                                                         <constraint firstAttribute="height" constant="150" id="T99-g9-3Nf"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="by6-h6-in6">
-                                                                    <rect key="frame" x="224" y="35.999999999999993" width="145" height="123.33333333333331"/>
+                                                                    <rect key="frame" x="216" y="23.999999999999993" width="153" height="123.33333333333331"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63x-wz-3ub" userLabel="ListingName">
                                                                             <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
@@ -368,7 +368,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: 5500 THB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-Yy-dWY">
-                                                                            <rect key="frame" x="0.0" y="34.333333333333329" width="126" height="20.333333333333329"/>
+                                                                            <rect key="frame" x="0.0" y="34.333333333333336" width="126" height="20.333333333333336"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -390,9 +390,9 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="60H-E3-aFJ" firstAttribute="leading" secondItem="vcE-g1-qDB" secondAttribute="leading" constant="8" id="VnV-ZF-ZVc"/>
-                                                                <constraint firstItem="60H-E3-aFJ" firstAttribute="top" secondItem="vcE-g1-qDB" secondAttribute="top" constant="36" id="dAR-7T-6aV"/>
-                                                                <constraint firstItem="by6-h6-in6" firstAttribute="top" secondItem="vcE-g1-qDB" secondAttribute="top" constant="36" id="dUI-Oe-s47"/>
-                                                                <constraint firstItem="by6-h6-in6" firstAttribute="leading" secondItem="60H-E3-aFJ" secondAttribute="trailing" constant="16" id="eBl-zO-Ly1"/>
+                                                                <constraint firstItem="60H-E3-aFJ" firstAttribute="top" secondItem="vcE-g1-qDB" secondAttribute="top" constant="12" id="dAR-7T-6aV"/>
+                                                                <constraint firstItem="by6-h6-in6" firstAttribute="top" secondItem="vcE-g1-qDB" secondAttribute="top" constant="24" id="dUI-Oe-s47"/>
+                                                                <constraint firstItem="by6-h6-in6" firstAttribute="leading" secondItem="60H-E3-aFJ" secondAttribute="trailing" constant="8" id="eBl-zO-Ly1"/>
                                                                 <constraint firstAttribute="trailing" secondItem="by6-h6-in6" secondAttribute="trailing" constant="8" id="uCx-rt-19K"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
@@ -688,8 +688,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
         <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
